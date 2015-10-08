@@ -7,5 +7,5 @@ buildFuture:                false
 
 theme:                      "hugo-incorporated"
 
-languageCode:    "en-us"
-title:           "My New Hugo Site"
+title:                      "Joinville Eau Vive"
+languageCode:               "fr-fr"

@@ -8,7 +8,7 @@ gzip
 git github.com/jevck/jevck.com {
 	path ../
 	hook /_admin/github/hook/jevck.com
-	then hugo --config=/var/www/jevck.com/Hugofile.prod
+	then hugo --config=/var/www/jevck.com/Hugofile.prod.yaml
 }
 
 log stdout
