@@ -1,0 +1,11 @@
+---
+
+baseURL:                    "http://preview.jevck.com/"
+
+buildDrafts:                true
+buildFuture:                true
+
+theme:                      "hugo-incorporated"
+
+title:                      "[Preview] Joinville Eau Vive"
+languageCode:               "fr-fr"

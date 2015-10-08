@@ -4,7 +4,7 @@ RUN apk add --update git \
  && rm -rf /var/cache/apk/*
 
 RUN echo "Installing Caddy..." \
- && curl -jksSL "https://caddyserver.com/download/build?os=linux&arch=amd64&features=cms%2Cgit" | gunzip -c - | tar -xf - -C /tmp \
+ && curl -jksSL "https://caddyserver.com/download/build?os=linux&arch=amd64&features=git" | gunzip -c - | tar -xf - -C /tmp \
  && mv /tmp/caddy /usr/local/bin/caddy \
  && rm -f /tmp/*.txt
 
@@ -18,9 +18,9 @@ RUN adduser -D -u 500 www \
  && mkdir -p /var/www \
  && chown -R www /var/www
 
-COPY Caddyfile.prod /var/www/Caddyfile
+COPY Caddyfile.prod Caddyfile.preview /var/www/
 
 WORKDIR /var/www
 EXPOSE 8080
 USER www
-CMD [ "caddy" ]
+CMD [ "caddy", "-conf=Caddyfile.prod" ]
