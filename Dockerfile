@@ -9,7 +9,7 @@ RUN echo "Installing Caddy..." \
  && rm -f /tmp/*.txt
 
 ENV HUGO_VERSION 0.14
-RUN echo "Installing Hugo" \
+RUN echo "Installing Hugo..." \
  && curl -jksSL "https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux_amd64.tar.gz" | gunzip -c - | tar -xf - -C /tmp \
  && mv /tmp/hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/local/bin/hugo \
  && rm -rf /tmp/hugo_${HUGO_VERSION}_linux_amd64
