@@ -1,0 +1,29 @@
+0.0.0.0:8080
+
+root /var/www/jevck.com/public
+
+ext .html
+gzip
+
+git github.com/jevck/jevck.com {
+	path ../
+	interval 10
+	then hugo --baseUrl="http://www.jevck.com/" --destination=/var/www/jevck.com/public --buildDrafts=false --buildFuture=false
+}
+
+log access.log {
+	rotate {
+		size 100 # Rotate after 100 MB
+		age  30  # Keep log files for 30 days
+		keep 10  # Keep at most 10 log files
+	}
+}
+
+errors {
+	log error.log {
+		size 50 # Rotate after 50 MB
+		age  30 # Keep rotated files for 30 days
+		keep 5  # Keep at most 5 log files
+	}
+	404 404.html
+}
