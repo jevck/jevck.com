@@ -1,0 +1,11 @@
+---
+
+baseURL:                    "http://www.jevck.com/"
+
+buildDrafts:                false
+buildFuture:                false
+
+theme:                      "hugo-incorporated"
+
+languageCode:    "en-us"
+title:           "My New Hugo Site"
