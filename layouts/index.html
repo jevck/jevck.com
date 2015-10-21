@@ -1,0 +1,83 @@
+{{ partial "header.html" . }}
+
+<div class="blog-cover" style="background-image:url(/images/{{ .Site.Params.inc.cover_image }});">
+    
+    <section>
+        <div class="container">
+            <h1>{{ .Site.Params.inc.title }}</h1>
+            {{ with .Site.Params.inc.subtitle }}<h3>{{ . }}</h3>{{ end }}
+        
+            {{ with .Site.Params.inc.twitter }}
+            <a href="https://twitter.com/{{ . }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
+            {{ end }}
+            {{ with .Site.Params.inc.github }}
+            <a href="https://github.com/{{ . }}" title="Follow on Github" target="_blank"><i class="icon icon-github"></i></a>
+            {{ end }}
+            {{ with .Site.Params.inc.facebook }}
+            <a href="http://facebook.com/{{ . }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
+            {{ end }}
+            <a href="/index.xml" title="RSS Feed">
+                <i class="icon icon-rss"></i>
+            </a>
+        </div>
+    </section>
+</div>
+
+    <div class="container">
+        <section>
+
+<h2>Bienvenue sur le site internet de Joinville Eau Vive</h2>
+<h3>Jouer avec l'eau, Eduquer ses sens, Vivre la rivière...</h3>
+
+<r:boolean_part:if part="display_msgbox">
+<div class="msgbox msginfo">
+<r:content part="msgbox" />
+</div>
+</r:boolean_part:if>
+
+<div class="floatingbox right textleft">
+    <a href="/club/activites/loisirs"><r:attachment:image name="promo_loisirs.jpg" alt="Le kayak en loisir" /></a>
+    <em>Le kayak en <a href="/club/activites/loisirs">loisir</a></em>
+</div>
+
+<div class="textleft">
+    <p><br /></p>
+    <p><strong>Joinville Eau Vive</strong> (JEV) est un club de <a href="/canoe-kayak">canoë-kayak</a>, situé dans la région parisienne (val de marne 94, ile de France), à Joinville-le-Pont.</p>
+    <p>A travers ce site vous découvrirez notre <a href="/canoe-kayak">sport</a> (ou plutôt passion !), le <a href="/club">club</a> et ses <a href="/adherent">adhérents</a>.</p>
+    <p>Mais ce site est surtout un <em>véritable lien entre tous les kayakistes et céistes joinvillais, surtout lorsqu'ils sont éloignés de leur port d'attache : leur club.</em></p>
+</div>
+
+<p class="clear"></p>
+
+<div class="floatingbox left">
+    <a href="/club/activites/competition"><r:attachment:image name="promo_compet.jpg" alt="Le kayak en compétition" /></a>
+    <em>Le kayak en <a href="/club/activites/competition">compétition</a></em>
+</div>
+
+<div class="textleft">
+    <br />
+    <p>Composé uniquement de <a href="/club/fonctionnement">bénévoles</a>, JEV est équilibré entre les activités de <a href="/club/activites/competition">compétition</a> (notamment en <a href="/club/activites/competition/descente">descente</a>) et de <a href="/club/activites/loisirs">loisirs</a> (en <a href="/club/activites/loisirs/eau_vive">eaux-vives</a>).</p>
+    <p>Depuis l'<a href="/club/activites/initiation">initiation sur la Marne</a> aux <a href="/club/activites/competition">championnats de France</a>, en passant par les <a href="/club/activites/loisirs/eau_vive">rapides les plus tumultueux des alpes</a> ou des <a href="/club/activites/loisirs/eau_plate">randonnées en eau plate</a>, tous les adhérents partagent la même passion : le <a href="/canoe-kayak">canoë-kayak</a>.</p>
+    <p>Envie de vous joindre à nous ? Suivez le <a href="/club/inscription">guide</a> !</p>
+</div>
+
+<p class="clear"></p>
+
+<div>
+    <p class="textcenter"><strong>Visionnez le <a href="/adherents/multimedia/videos/lipdub2009"><strong>lipdub de JEV</strong></a> :</strong></p>
+    <a href="/videos/lipdub2009.flv" style="display:block;margin-left:auto;margin-right:auto;width:480px;height:384px;" id="player">
+        <img src="/videos/lipdub2009.png" alt="Lipdub JEV 2009" />
+    </a>
+    <script type="text/javascript">
+    //<![CDATA[
+      $(document).ready(function() {
+        flowplayer("player", "/flash/flowplayer-3.1.2.swf", FlowPlayerConfig.homePage);
+      })
+    //]]>
+    </script>
+</div>
+
+
+        </section>
+    </div>
+{{ partial "footer.html" . }}

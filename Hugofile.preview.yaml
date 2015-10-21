@@ -1,11 +1,46 @@
 ---
 
-baseURL:                    "http://preview.jevck.com/"
+baseURL:                    http://www.jevck.com/
 
 buildDrafts:                true
 buildFuture:                true
 
-theme:                      "hugo-incorporated"
+theme:                      hugo-incorporated
 
 title:                      "[Preview] Joinville Eau Vive"
+
 languageCode:               "fr-fr"
+
+metaDataFormat:             yaml
+
+params:
+  inc:
+    title:        "Joinville Eau Vive"
+    subtitle:     "Club de canoë-kayak"
+    tagline:      "Joinville Eau Vive - Club de canoë-kayak"
+
+    cover_image:  home.jpg
+    logo:         logo_jev.png
+    
+    facebook:     joinvilleeauvive
+    twitter:      jevck
+    
+    # Sharing settings
+    sharing:
+      twitter:    true
+      facebook:   true
+      gplus:      false
+      hn:         false
+      
+   # Analytics     
+#    analytics:
+#      googleid: UA-00000000-0
+#      piwik:
+#        domain: piwik.example.com
+#        siteid: 0
+        
+    # Google Fonts
+    # eg. 'Droid+Sans:400,700|Droid+Serif:400,700'
+    google_font: 'Droid+Sans:400,700'
+    
+    # Setup your fonts, colors etc at _assets/stylesheets/main.scss

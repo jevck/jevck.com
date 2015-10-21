@@ -1,0 +1,28 @@
+<footer class="site-footer">
+    <div class="container">
+        <nav>
+            <a href="/">{{ .Site.Params.inc.title }}</a> &middot;
+
+            {{ $currentNode := . }}
+            {{ range .Site.Menus.main }}
+            <a class="{{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}active{{end}}" href="{{.URL}}">{{ .Name }}</a> &middot; 
+            {{ end }}
+        </nav>
+        
+        <nav class="social">
+            {{ with .Site.Params.inc.facebook }}
+            <a href="http://facebook.com/{{ . }}" title="Retrouvez nous sur Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+            {{ end }}    
+            {{ with .Site.Params.inc.twitter }}
+            <a href="https://twitter.com/{{ . }}" title="Retrouvez nous sur Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            {{ end }}
+            <a href="/index.xml" title="Flux RSS">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+</footer>
+{{ partial "_scripts.html" . }}
+
+</body>
+</html>

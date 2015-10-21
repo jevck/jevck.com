@@ -1,0 +1,33 @@
+{{ partial "header.html" . }}
+<aside class="section-nav">
+    <nav id="subnavigation">
+        <a class="sidebar-nav-item parent-nav-item" href="/canoe-kayak">Le canoë-kayak</a>
+
+        <ul>
+        {{ $currentNode := . }}
+        {{ range .Site.Menus.canoekayak }}
+        <li>
+          <a class="sidebar-nav-item{{if or ($currentNode.IsMenuCurrent "canoekayak" .) ($currentNode.HasMenuCurrent "canoekayak" .) }} active{{end}}" href="{{.URL}}">{{ .Name }}</a>
+          {{ if .HasChildren }}
+            <ul>
+              {{ range .Children }}
+              <li{{if $currentNode.IsMenuCurrent "canoekayak" . }} class="active"{{end}}>
+                <a href="{{.URL}}">{{ .Name }}</a>
+              </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </li>
+        {{ end }}
+        </ul>
+
+    </nav>
+</aside>
+<article>
+    <div class="container">
+        <section>
+            {{ .Content }}
+        </section>
+    </div>
+</article>
+{{ partial "footer.html" . }}

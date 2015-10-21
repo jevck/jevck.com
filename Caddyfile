@@ -1,2 +1,15 @@
 0.0.0.0:8080
+
 root public
+
+ext .html
+gzip
+
+log stdout
+
+errors {
+	log stderr
+	404 404.html
+}
+
+startup "hugo --config=config.toml"
